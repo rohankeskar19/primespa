@@ -3,6 +3,7 @@ import DarkNav from "../components/DarkNav";
 import GridItem from "../components/GridItem";
 import Footer from "../components/Footer";
 import { apiCall } from "../helpers/api-call";
+import chunk from "../helpers/generatechunk";
 
 export class Services extends Component {
   state = {
@@ -56,8 +57,7 @@ export class Services extends Component {
 
   render() {
     const { mainSectionArr, otherSectionArr } = this.state;
-    console.log({ test: "here", otherSectionArr });
-    var begun = false;
+    const newArr = chunk(otherSectionArr,3);
     return (
       <div id="shop">
         <DarkNav />
@@ -78,24 +78,27 @@ export class Services extends Component {
         <section className="shop primemedcontainer">
           <h2 className="hidden">Shop</h2>
           <div className="container">
-            {otherSectionArr.map((content, idx) => {
-              console.log("Index", idx);
-              console.log("Division", !(idx & 3));
+            {
+              
 
-              if (!(idx & 3)) {
-                begun = true;
-                return <div className="content row"></div>;
-              } else {
+              newArr.map((row) => {
                 return (
-                  <GridItem
-                    title={content.title}
-                    subinfo={content.description}
-                    price={false}
-                    key={idx}
-                  />
-                );
-              }
-            })}
+                  <div className="content row">
+                    {
+                      row.map((col,idx) => (
+                        <GridItem
+                          title={col.title}
+                          subinfo={col.description}
+                          price={false}
+                          key={idx}
+                        />
+                      ))
+                  }
+                  </div>
+                )
+              })
+            }
+            
           </div>
           {/* <div className="content row">
               <GridItem

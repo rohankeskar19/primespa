@@ -2,21 +2,63 @@ import React, { Component } from "react";
 
 import DarkNav from "../components/DarkNav";
 import Footer from "../components/Footer";
+import { apiCall } from "../helpers/api-call";
 
 export class PrimeMen extends Component {
+  state = {}
   componentDidMount() {
     window.executeHome();
 
     window.scrollTo(0, 0);
+    this.fetchContent();
   }
+
+  fetchContent = async () => {
+    try {
+      let apiCallReq = {
+        method: "get",
+        url: "static-content?name=primemen",
+        auth: 0,
+      };
+      const { data: response } = await apiCall(apiCallReq);
+      if (response.data.length) {
+        let mainSection = response.data.filter(
+          (obj) => obj.main_section == "true"
+        );
+        let otherSection = response.data.filter(
+          (obj) => obj.main_section == "false"
+        );
+        this.setState({
+          mainSectionArr: mainSection.map((obj) => {
+            return {
+              title: obj.title,
+              description: obj.description,
+              images: obj.images,
+            };
+          }),
+          otherSectionArr: otherSection.map((obj) => {
+            return {
+              title: obj.title,
+              description: obj.description,
+              images: obj.images,
+            };
+          }),
+        });
+      }
+    } catch (err) {
+      console.log("err in fetchContent => ", err);
+    }
+  };
+
   render() {
+    const {mainSectionArr} = this.state;
     return (
       <div id="blog">
         <DarkNav />
         <section className="blog-title">
           <div className="container">
             <div className="row">
-              <h2>Coming Soon</h2>
+              <h2>{mainSectionArr && mainSectionArr[0].title}</h2>
               {/* <p>Testosterone clinic</p> */}
               {/* <p>PRP injections</p> */}
             </div>
