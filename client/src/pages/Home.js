@@ -106,7 +106,7 @@ export class Home extends Component {
                 <div>
                   <div className="col col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 section-title">
                     <h3>{Boolean(mainSectionArr.length) && otherSectionArr[0].title}</h3>
-                    <p>
+                    <p className="description_container">
                       {Boolean(mainSectionArr.length) && otherSectionArr[0].description}
                     </p>
                   </div>

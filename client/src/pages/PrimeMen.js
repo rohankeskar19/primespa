@@ -82,7 +82,7 @@ export class PrimeMen extends Component {
                       <div>
                         <div className="clearfix" />
                     <h3>{item.title}</h3>
-                    <p dangerouslySetInnerHTML={{__html : item.description}}></p>
+                    <p className="description_container">{item.description}</p>
                       </div>
                     ))
 

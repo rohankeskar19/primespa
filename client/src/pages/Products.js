@@ -84,7 +84,7 @@ export class Products extends Component {
               <div className="container">
                 <div className="row section-title">
                   <div className="col col-md-10 col-md-offset-1">
-                    <p>{content.description}
+                    <p className="description_container">{content.description}
                     </p>
                   </div>
                 </div>

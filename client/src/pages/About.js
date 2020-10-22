@@ -58,7 +58,7 @@ export class About extends Component {
                 >
                   Spa &amp; Wellness
                 </span>
-                <h2>{Boolean(mainSectionArr.length) && mainSectionArr[0]?.title}</h2>
+                <h2 >{Boolean(mainSectionArr.length) && mainSectionArr[0]?.title}</h2>
               </div>
             </div>
           </div>
@@ -85,7 +85,7 @@ export class About extends Component {
               <div className="row section-title" key={idx}>
                 <div className="col col-md-10 col-md-offset-1">
                   <h2>{content?.title}</h2>
-                  <p>
+                  <p className="description_container">
                     {content?.description}
                   </p>
                 </div>
