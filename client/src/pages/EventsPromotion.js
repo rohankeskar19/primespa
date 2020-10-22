@@ -57,7 +57,11 @@ export class EventsPromotion extends Component {
                     <h4>
                       <span>{content.title}</span>
                     </h4>
-                    <div dangerouslySetInnerHTML={{__html: content.description}} />
+                    <div    >
+                      <p className="description_container">
+                        {content.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
               )) }

@@ -140,6 +140,10 @@ h6 {
   border-right: 2px solid #fff;
 }
 
+.description_container{
+  white-space: pre-line !important;
+}
+
 .vertical-line {
   width: 2px;
   height: 250px;

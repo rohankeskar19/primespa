@@ -65,6 +65,7 @@ class EventsPromotionContent extends Component {
     if(["title", "description"].includes(e.target.name)) {
       let eventsContentArr = [...this.state.eventsContentArr];
       eventsContentArr[e.target.dataset.id][e.target.name] = e.target.value;
+      console.log(e.target.value)
       this.setState({ eventsContentArr });
     }
   }
