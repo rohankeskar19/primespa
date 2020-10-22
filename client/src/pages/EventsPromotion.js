@@ -55,7 +55,7 @@ export class EventsPromotion extends Component {
                 <div className="events-promo-card" key={idx}>
                   <div className="events-promo-card-header">
                     <h4>
-                      <span>{content.title}TEST</span>
+                      <span>{content.title}</span>
                     </h4>
                     <div dangerouslySetInnerHTML={{__html: content.description}} />
                   </div>
