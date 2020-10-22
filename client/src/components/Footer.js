@@ -29,22 +29,23 @@ function Footer() {
           </div>
           <span className="vertical-line"></span>
           <div className="footer-about col col-xs-4 col-md-2 ">
-            <ul className="address-info">
+          <ul >
+              <li>
+                <a href="#">
+                  <img src="/images/carecredit-logo.png" alt="" className="carecredit-image"/>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <span className="vertical-line"></span>
+          <div className="col col-xs-4 col-md-2 ">
+           <ul className="address-info">
               <li>{data.name}</li>
               <li>{data.address1}</li>
               <li>{data.address2}</li>
               <li>Phone: {data.phone}</li>
               <li>Fax: {data.fax}</li>
               <li>{data.email}</li>
-            </ul>
-          </div>
-          <span className="vertical-line"></span>
-          <div className="col col-xs-4 col-md-2 ">
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/services">Services</Link></li>
-              <li><Link to="/products">Products</Link></li>
             </ul>
           </div>
         </div>
@@ -54,13 +55,7 @@ function Footer() {
             <p>{data.copyright}</p>
           </div>
           <div className="col col-md-6">
-            <ul className="nav navbar-nav pull-right">
-              <li>
-                <a href="#">
-                  <img src="/images/carecredit-logo.png" alt="" />
-                </a>
-              </li>
-            </ul>
+            
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@ function GridItem({ title, subinfo, price }) {
       <div className="thumbnail">
         <div>
           <div className="title">
-            <h3 style={{ color: "#00c4bb" }}>{title}</h3>
+            <h3 style={{ color: "#273b91" }}>{title}</h3>
             <span className="sub-text playfair nofont description_container">{subinfo}</span>
           </div>
 
