@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import data from "../Constants";
 
 function Footer() {
@@ -6,7 +7,7 @@ function Footer() {
     <footer>
       <div className="container">
         <div className="row footer-row">
-          <div className="victoria col col-xs-6 col-md-3">
+          <div className="victoria col col-xs-4 col-md-2">
             <img
               src="/images/logo.png"
               alt=""
@@ -26,15 +27,24 @@ function Footer() {
               </li>
             </ul>
           </div>
-
-          <div className="footer-about col col-xs-6 col-md-3">
-            <ul>
+          <span className="vertical-line"></span>
+          <div className="footer-about col col-xs-4 col-md-2 ">
+            <ul className="address-info">
               <li>{data.name}</li>
               <li>{data.address1}</li>
               <li>{data.address2}</li>
               <li>Phone: {data.phone}</li>
               <li>Fax: {data.fax}</li>
               <li>{data.email}</li>
+            </ul>
+          </div>
+          <span className="vertical-line"></span>
+          <div className="col col-xs-4 col-md-2 ">
+            <ul>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/services">Services</Link></li>
+              <li><Link to="/products">Products</Link></li>
             </ul>
           </div>
         </div>

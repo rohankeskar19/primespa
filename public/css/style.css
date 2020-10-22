@@ -131,8 +131,28 @@ h6 {
   text-transform: uppercase;
 }
 
+.address-info li {
+  font-size: 15px !important;
+}
+
+.address-info-container {
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+
+.vertical-line {
+  width: 2px;
+  height: 250px;
+  margin-top: -35px;
+  background-color: rgb(194, 194, 194);
+}
+
 .hide {
   display: inline-block;
+}
+
+.sub-text {
+  font-size: 12px !important;
 }
 
 .logo {

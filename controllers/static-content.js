@@ -22,6 +22,7 @@ const addStaticContent = async (req, res) => {
         pool.getConnection(async (err, con) => {
             if (err) {
                 console.log(err);
+                
                 return res
                   .status(500)
                   .json({ error: "Failed to process request try again" });
@@ -54,6 +55,7 @@ const getStaticContent = (req, res) => {
         } else {
             pool.getConnection(async (err, con) => {
                 if (err) {
+                    
                     console.log(err);
                     return res.status(500).json({ error: "Failed to process request try again" });
                   } else {
