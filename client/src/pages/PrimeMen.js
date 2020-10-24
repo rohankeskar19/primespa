@@ -65,7 +65,7 @@ export class PrimeMen extends Component {
               {/* <h2>{mainSectionArr && mainSectionArr[0].title}</h2> */}
               {/* <p>Testosterone clinic</p> */}
               <p>{mainSectionArr.length > 0 && mainSectionArr[0].title}</p>
-              <p>PRP injections</p>
+              <p>{mainSectionArr.length > 0 && mainSectionArr[0].description}</p>
             </div>
           </div>
         </section>

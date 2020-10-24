@@ -164,7 +164,7 @@ h6 {
 
 .sub-text {
   font-size: 16px !important;
-  text-align: left;
+  text-align: justify;
   margin-left: 5px;
 }
 
@@ -1997,6 +1997,10 @@ header .search-box form button {
   background: #fbfbfb;
 }
 
+.grid-item {
+  background: #fbfbfb !important;
+}
+
 .news-shop .shop .price span {
   display: block;
   width: 65px;
@@ -3817,7 +3821,7 @@ footer .copyright .nav a:hover {
 
 #shop .shop .thumbnail:before,
 #shop-details .shop .thumbnail:before {
-  height: 88%;
+  height: 100%;
   border-radius: 5px;
 }
 
