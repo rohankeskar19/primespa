@@ -6,9 +6,9 @@ import { apiCall } from "../helpers/api-call";
 
 export class PrimeMen extends Component {
   state = {
-    mainSectionArr : [],
-    otherSectionArr: []
-  }
+    mainSectionArr: [],
+    otherSectionArr: [],
+  };
   componentDidMount() {
     window.executeHome();
 
@@ -54,8 +54,7 @@ export class PrimeMen extends Component {
   };
 
   render() {
-    const {mainSectionArr, otherSectionArr} = this.state;
-    console.log(this.state);
+    const { mainSectionArr, otherSectionArr } = this.state;
     return (
       <div id="blog">
         <DarkNav />
@@ -65,7 +64,9 @@ export class PrimeMen extends Component {
               {/* <h2>{mainSectionArr && mainSectionArr[0].title}</h2> */}
               {/* <p>Testosterone clinic</p> */}
               <p>{mainSectionArr.length > 0 && mainSectionArr[0].title}</p>
-              <p>{mainSectionArr.length > 0 && mainSectionArr[0].description}</p>
+              <p>
+                {mainSectionArr.length > 0 && mainSectionArr[0].description}
+              </p>
             </div>
           </div>
         </section>
@@ -77,16 +78,15 @@ export class PrimeMen extends Component {
               <section className="news container">
                 <h2 className="hidden">News</h2>
                 <div>
-                  {
-                    otherSectionArr.map((item,index) => (
-                      <div>
-                        <div className="clearfix" />
-                    <h3>{item.title}</h3>
-                    <p className="description_container">{item.description}</p>
-                      </div>
-                    ))
-
-                  }
+                  {otherSectionArr.map((item, index) => (
+                    <div>
+                      <div className="clearfix" />
+                      <h3>{item.title}</h3>
+                      <p className="description_container">
+                        {item.description}
+                      </p>
+                    </div>
+                  ))}
                   {/* <div className="big-img">
                     <img
                       src="images/menspa.jpg"
@@ -94,12 +94,7 @@ export class PrimeMen extends Component {
                       className="img img-responsive primemen-image"
                     />
                   </div> */}
-
                 </div>
-                
-                
-                
-              
               </section>
             </div>
           </div>

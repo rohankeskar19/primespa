@@ -5,13 +5,13 @@ import DarkNav from "../components/DarkNav";
 import Constants from "../Constants";
 import { apiCall } from "../helpers/api-call";
 
-var $ =  window.$;
+var $ = window.$;
 
 export class Home extends Component {
   state = {
     mainSectionArr: [],
-    otherSectionArr: []
-  }
+    otherSectionArr: [],
+  };
 
   componentDidMount() {
     // window.executeHome();
@@ -22,25 +22,37 @@ export class Home extends Component {
   fetchContent = async () => {
     try {
       let apiCallReq = {
-        method: 'get',
-        url: 'static-content?name=home',
-        auth: 0
-      }
+        method: "get",
+        url: "static-content?name=home",
+        auth: 0,
+      };
       const { data: response } = await apiCall(apiCallReq);
       if (response.data.length) {
-        let mainSection = response.data.filter(obj => obj.main_section == 'true');
-        let otherSection = response.data.filter(obj => obj.main_section == 'false');
+        let mainSection = response.data.filter(
+          (obj) => obj.main_section == "true"
+        );
+        let otherSection = response.data.filter(
+          (obj) => obj.main_section == "false"
+        );
         this.setState({
-          mainSectionArr: mainSection.map(obj => {
-            return { title: obj.title, description: obj.description, images: obj.images };
+          mainSectionArr: mainSection.map((obj) => {
+            return {
+              title: obj.title,
+              description: obj.description,
+              images: obj.images,
+            };
           }),
-          otherSectionArr: otherSection.map(obj => {
-            return { title: obj.title, description: obj.description, images: obj.images };
-          })
+          otherSectionArr: otherSection.map((obj) => {
+            return {
+              title: obj.title,
+              description: obj.description,
+              images: obj.images,
+            };
+          }),
         });
         setTimeout(() => {
           console.log($(".hero-slider"));
-         /*  $(".hero-slider").owlCarousel({
+          /*  $(".hero-slider").owlCarousel({
             slideSpeed: 500,
             paginationSpeed: 500,
             singleItem: true,
@@ -50,12 +62,12 @@ export class Home extends Component {
             mouseDrag: true,
           }); */
           window.executeHome();
-        }, 100)
+        }, 100);
       }
     } catch (err) {
-      console.log('err in fetchContent => ', err);
+      console.log("err in fetchContent => ", err);
     }
-  }
+  };
 
   render() {
     const { mainSectionArr, otherSectionArr } = this.state;
@@ -66,20 +78,33 @@ export class Home extends Component {
         <div className="hero row" id="main-hero">
           <div className="title home-title">
             <div>
-              <h3>{Boolean(mainSectionArr.length) && mainSectionArr[0]?.title}</h3>
+              <h3>
+                {Boolean(mainSectionArr.length) && mainSectionArr[0]?.title}
+              </h3>
               <p>
                 <i className="fa fa-phone phoneicon"></i>
                 {Constants.phone}
               </p>
-              <p>{Boolean(mainSectionArr.length) && mainSectionArr[0]?.description}</p>
+              <p>
+                {Boolean(mainSectionArr.length) &&
+                  mainSectionArr[0]?.description}
+              </p>
             </div>
           </div>
           <div className="hero-slider">
-            {Boolean(mainSectionArr.length) && mainSectionArr[0].images.map((img, idx) => (
-              <div className={`row item item-${idx+1}`} key={idx} style={{background: `url(${img}) no-repeat 50% 50%`, backgroundSize: 'cover'}}>
-                <div className="overlay" />
-              </div>              
-            ))}
+            {Boolean(mainSectionArr.length) &&
+              mainSectionArr[0].images.map((img, idx) => (
+                <div
+                  className={`row item item-${idx + 1}`}
+                  key={idx}
+                  style={{
+                    background: `url(${img}) no-repeat 50% 50%`,
+                    backgroundSize: "cover",
+                  }}
+                >
+                  <div className="overlay" />
+                </div>
+              ))}
             {/* <div className="row item item-1">
               <div className="overlay" />
             </div>
@@ -105,15 +130,23 @@ export class Home extends Component {
               <div className="about-slider">
                 <div>
                   <div className="col col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 section-title">
-                    <h3>{Boolean(mainSectionArr.length) && otherSectionArr[0].title}</h3>
+                    <h3>
+                      {Boolean(mainSectionArr.length) &&
+                        otherSectionArr[0].title}
+                    </h3>
                     <p className="description_container">
-                      {Boolean(mainSectionArr.length) && otherSectionArr[0].description}
+                      {Boolean(mainSectionArr.length) &&
+                        otherSectionArr[0].description}
                     </p>
                   </div>
                   <img
-                    src={Boolean(mainSectionArr.length) && otherSectionArr[0].images[0]}
+                    src={
+                      Boolean(mainSectionArr.length) &&
+                      otherSectionArr[0].images[0]
+                    }
                     alt="Slide Picture"
                     className="img img-responsive"
+                    className="about-image"
                   />
                 </div>
               </div>
@@ -121,7 +154,16 @@ export class Home extends Component {
 
             <section className="resort col col-sm-6">
               <div className="resort-slider">
-                <div className="item item-1" style={{background: `url(${Boolean(mainSectionArr.length) && otherSectionArr[0].images[1]}) no-repeat 50% 50%`, backgroundSize: 'contain'}}>
+                <div
+                  className="item item-1"
+                  style={{
+                    background: `url(${
+                      Boolean(mainSectionArr.length) &&
+                      otherSectionArr[0].images[1]
+                    }) no-repeat 50% 50%`,
+                    backgroundSize: "contain",
+                  }}
+                >
                   <div className="overlay" />
                 </div>
               </div>

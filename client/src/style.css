@@ -13,6 +13,13 @@
   border-radius: 10px;
   background-color: rgb(245, 245, 245);
 }
+.about-image {
+  height: 400px;
+}
+
+.about {
+  height: 800px;
+}
 
 .login-header {
   text-align: center;
